@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --rosa: #e8a0a0;
@@ -150,13 +151,15 @@
             margin-left: 4px;
         }
 
-        /* Sound notice */
         .sound-notice {
             text-align: center;
             padding: 14px;
             font-size: 0.95rem;
-            color: var(--texto-leve);
+            color: #5A4040;
+            font-weight: 600;
+            opacity: 0.95;
         }
+
 
         /* Offer section */
         .offer-section {
@@ -303,6 +306,18 @@
             }
         }
     </style>
+
+
+    <script>!function (i, n) { i._plt = i._plt || (n && n.timeOrigin ? n.timeOrigin + n.now() : Date.now()) }(window, performance);</script>
+    <link rel="preload" href="https://scripts.converteai.net/60b2de82-89bd-4e79-a03f-d206fb6f5a6b/players/69475c86b31bcf401dd8a467/v4/player.js" as="script">
+    <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+    <link rel="preload" href="https://cdn.converteai.net/60b2de82-89bd-4e79-a03f-d206fb6f5a6b/69475c5c1a66a7c81fa4d570/main.m3u8" as="fetch">
+    <link rel="dns-prefetch" href="https://cdn.converteai.net">
+    <link rel="dns-prefetch" href="https://scripts.converteai.net">
+    <link rel="dns-prefetch" href="https://images.converteai.net">
+    <link rel="dns-prefetch" href="https://api.vturb.com.br">
+
+
 </head>
 
 <body>
@@ -315,59 +330,45 @@
 
         <!-- Video -->
         <section class="video-section">
-            <div class="video-wrapper">
-                <div class="video-container">
 
-                    <!-- ============================================
-                         SUBSTITUA TODO ESTE BLOCO PELO SEU EMBED DO VTURB
-                         
-                         Vá no Vturb > Seu vídeo > Publicar > Copie o código embed
-                         Cole aqui substituindo o <div class="video-placeholder">...</div>
-                         
-                         Exemplo:
-                         <iframe id="vid_abc123" src="https://player.vturb.com.br/embed/abc123" 
-                         style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                         frameborder="0" allow="autoplay" allowfullscreen></iframe>
-                    ============================================ -->
 
-                    <div class="video-placeholder">
-                        <div class="play-button">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
+            <vturb-smartplayer id="vid-69475c86b31bcf401dd8a467" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+            <script type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/60b2de82-89bd-4e79-a03f-d206fb6f5a6b/players/69475c86b31bcf401dd8a467/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+
+
         </section>
 
-        <!-- Sound notice -->
-        <p class="sound-notice">🔈 Comprueba si el sonido está activado.</p>
+    </div>
 
-        <!-- Offer -->
-        <section class="offer-section">
-            <span class="discount-badge">50% OFF</span>
-            <h2 class="offer-title">¡DESCUENTO SORPRESA!</h2>
+    </section>
 
-            <div class="pricing">
-                <p class="original-price">De $134,90</p>
-                <p class="current-price">$67,00</p>
-            </div>
+    <!-- Sound notice -->
+    <p class="sound-notice">🔈 Comprueba si el sonido está activado.</p>
 
-            <p class="offer-instruction">Toque el botón a continuación para finalizar:</p>
+    <!-- Offer -->
+    <section class="offer-section">
+        <span class="discount-badge">50% OFF</span>
+        <h2 class="offer-title">¡DESCUENTO SORPRESA!</h2>
 
-            <!-- HOTMART - Sales Funnel Widget -->
-            <!--- sales funnel container --->
-            <div id="hotmart-sales-funnel"></div>
+        <div class="pricing">
+            <p class="original-price">De $134,90</p>
+            <p class="current-price">$67,00</p>
+        </div>
 
-            <!--- script load and setup --->
-            <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
-            <script>
-                checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
-            </script>
-            <!-- HOTMART - Sales Funnel Widget -->
-        </section>
+        <p class="offer-instruction">Toque el botón a continuación para finalizar:</p>
+
+        <!-- HOTMART - Sales Funnel Widget -->
+        <!--- sales funnel container --->
+        <div id="hotmart-sales-funnel"></div>
+
+        <!--- script load and setup --->
+        <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+        <script>
+            checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+        </script>
+        <!-- HOTMART - Sales Funnel Widget -->
+    </section>
     </div>
 
     <!-- Footer -->
