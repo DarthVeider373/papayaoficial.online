@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papaya - Oferta Especial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rosa: #e8a0a0;
+            --rosa-escuro: #d48b8b;
+            --pessego: #f5c5a0;
+            --pessego-claro: #fde8d5;
+            --laranja: #e8945a;
+            --verde: #6bb879;
+            --verde-escuro: #5aa368;
+            --fundo-top: #f5d5c5;
+            --fundo-bottom: #f0b8b8;
+            --texto: #5a4040;
+            --texto-leve: #8a7070;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(180deg, var(--fundo-top) 0%, var(--fundo-bottom) 100%);
+            min-height: 100vh;
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 30px 20px 40px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .pre-headline {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.5);
+            color: var(--rosa-escuro);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
+            font-weight: 800;
+            color: var(--texto);
+            line-height: 1.25;
+        }
+
+        h1 .highlight {
+            color: var(--verde);
+        }
+
+        /* Video section */
+        .video-section {
+            margin-bottom: 16px;
+        }
+
+        .video-wrapper {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(212, 139, 139, 0.25);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            background: #2a2a2a;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .play-button {
+            width: 70px;
+            height: 70px;
+            background: var(--verde);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 0 0 0 rgba(107, 184, 121, 0.4);
+            animation: pulse-play 2s infinite;
+        }
+
+        @keyframes pulse-play {
+            0% {
+                box-shadow: 0 0 0 0 rgba(107, 184, 121, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 18px rgba(107, 184, 121, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(107, 184, 121, 0);
+            }
+        }
+
+        .play-button svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+            margin-left: 4px;
+        }
+
+        /* Sound notice */
+        .sound-notice {
+            text-align: center;
+            padding: 14px;
+            font-size: 0.95rem;
+            color: var(--texto-leve);
+        }
+
+        /* Offer section */
+        .offer-section {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(212, 139, 139, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--laranja) 0%, var(--pessego) 100%);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .offer-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--rosa-escuro);
+            margin-bottom: 20px;
+        }
+
+        .pricing {
+            margin-bottom: 24px;
+        }
+
+        .original-price {
+            font-size: 1.3rem;
+            color: var(--texto-leve);
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+
+        .current-price {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--verde);
+        }
+
+        .offer-instruction {
+            font-size: 1.05rem;
+            color: var(--texto);
+            margin-bottom: 24px;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 18px 32px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            font-family: 'Nunito', sans-serif;
+            color: white;
+            background: linear-gradient(135deg, var(--verde) 0%, var(--verde-escuro) 100%);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 20px rgba(107, 184, 121, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(107, 184, 121, 0.5);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(90, 64, 64, 0.9);
+            color: rgba(255, 255, 255, 0.85);
+            padding: 28px 20px;
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.75rem;
+            opacity: 0.6;
+            line-height: 1.6;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .footer-copyright {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 16px 30px;
+            }
+
+            .offer-section {
+                padding: 28px 20px;
+            }
+
+            .current-price {
+                font-size: 2.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <span class="pre-headline">⚠️ Oferta Exclusiva</span>
+            <h1>El Método Natural Para <span class="highlight">Blindar Tu Intestino</span> en Solo 21 Días</h1>
+        </header>
+
+        <!-- Video -->
+        <section class="video-section">
+            <div class="video-wrapper">
+                <div class="video-container">
+
+                    <!-- ============================================
+                         SUBSTITUA TODO ESTE BLOCO PELO SEU EMBED DO VTURB
+                         
+                         Vá no Vturb > Seu vídeo > Publicar > Copie o código embed
+                         Cole aqui substituindo o <div class="video-placeholder">...</div>
+                         
+                         Exemplo:
+                         <iframe id="vid_abc123" src="https://player.vturb.com.br/embed/abc123" 
+                         style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                         frameborder="0" allow="autoplay" allowfullscreen></iframe>
+                    ============================================ -->
+
+                    <div class="video-placeholder">
+                        <div class="play-button">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sound notice -->
+        <p class="sound-notice">🔈 Comprueba si el sonido está activado.</p>
+
+        <!-- Offer -->
+        <section class="offer-section">
+            <span class="discount-badge">50% OFF</span>
+            <h2 class="offer-title">¡DESCUENTO SORPRESA!</h2>
+
+            <div class="pricing">
+                <p class="original-price">De $134,90</p>
+                <p class="current-price">$67,00</p>
+            </div>
+
+            <p class="offer-instruction">Toque el botón a continuación para finalizar:</p>
+
+            <!-- HOTMART - Sales Funnel Widget -->
+            <!--- sales funnel container --->
+            <div id="hotmart-sales-funnel"></div>
+
+            <!--- script load and setup --->
+            <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+            <script>
+                checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+            </script>
+            <!-- HOTMART - Sales Funnel Widget -->
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <nav class="footer-links">
+                <a href="../terminos/index.html">Términos de Uso</a>
+                <a href="../privacidad/index.html">Privacidad</a>
+            </nav>
+
+            <p class="footer-disclaimer">
+                Este sitio no forma parte del sitio web de YouTube ni de Google LLC. Tampoco está respaldado ni patrocinado por YouTube de ninguna manera. YouTube es una marca registrada de Google LLC.
+                <br><br>
+                Queda estrictamente prohibida la reproducción, distribución o modificación total o parcial de este sitio y su contenido. Todo el contenido está protegido por las leyes de derechos de autor y propiedad intelectual aplicables en todos los países.
+                <br><br>
+                El autor se reserva el derecho de emprender acciones legales en caso de incumplimiento. Se han realizado todos los esfuerzos para presentar este programa con precisión. No hay garantía de que usted obtenga los mismos resultados o alcance la abundancia mencionada.
+            </p>
+
+            <p class="footer-copyright">
+                Todos los derechos reservados © 2025
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

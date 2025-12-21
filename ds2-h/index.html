@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Esperar! - Última Oportunidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rosa: #e8a0a0;
+            --rosa-escuro: #d48b8b;
+            --pessego: #f5c5a0;
+            --pessego-claro: #fde8d5;
+            --laranja: #e8945a;
+            --verde: #6bb879;
+            --verde-escuro: #5aa368;
+            --vermelho: #d46b6b;
+            --fundo: #ffffff;
+            --texto: #5a4040;
+            --texto-leve: #8a7070;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--fundo);
+            min-height: 100vh;
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            background: linear-gradient(90deg, var(--verde) 0%, var(--verde-escuro) 100%);
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(107, 184, 121, 0.3);
+        }
+
+        .container {
+            max-width: 540px;
+            margin: 0 auto;
+            padding: 36px 20px 50px;
+        }
+
+        .money-image {
+            text-align: center;
+            margin: 24px 0 32px;
+        }
+
+        .money-image img {
+            max-width: 420px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 12px 35px rgba(90, 64, 64, 0.15);
+        }
+
+        .offer-card {
+            background: #fafafa;
+            border-radius: 24px;
+            padding: 36px 28px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .offer-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--laranja);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .price-line {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--vermelho);
+            font-weight: 600;
+        }
+
+        .new-price {
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: var(--verde);
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            margin: 24px 0 12px;
+            background: linear-gradient(135deg, #ffd84d 0%, #ffcc00 100%);
+            color: #000000;
+            font-weight: 900;
+            border-radius: 14px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.45);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(255, 204, 0, 0.6);
+        }
+
+        .decline-link {
+            font-size: 0.9rem;
+            color: var(--texto-leve);
+            text-decoration: underline;
+        }
+
+        .scarcity {
+            margin-top: 28px;
+            padding: 22px;
+            background: linear-gradient(135deg, var(--verde) 0%, var(--verde-escuro) 100%);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(107, 184, 121, 0.35);
+            text-align: center;
+        }
+
+        .scarcity-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+            animation: pulse-number 1.2s ease-in-out infinite;
+        }
+
+        .scarcity-label {
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            animation: pulse-label 1.2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-number {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(0.92);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes pulse-label {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        footer {
+            background: linear-gradient(90deg, var(--verde) 0%, var(--verde-escuro) 100%);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 28px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 540px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.85);
+            margin: 0 12px;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            margin-top: 18px;
+            line-height: 1.6;
+        }
+
+        .footer-copyright {
+            margin-top: 18px;
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 480px) {
+            .money-image img {
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">Esperar...</div>
+
+    <div class="container">
+        <div class="money-image">
+            <img src="/image/1.png" alt="$100 dólares">
+        </div>
+
+        <div class="offer-card">
+            <h2 class="offer-title">¡Última Oportunidad!</h2>
+
+            <p class="price-line">De <span class="old-price">$134,90</span></p>
+            <p class="price-line">Por <span class="old-price">$99,90</span></p>
+            <p class="price-line">Ahora <span class="new-price">$49,90</span></p>
+
+            <!-- HOTMART - Sales Funnel Widget -->
+            <!--- sales funnel container --->
+            <div id="hotmart-sales-funnel"></div>
+
+            <!--- script load and setup --->
+            <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+            <script>
+                checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+            </script>
+            <!-- HOTMART - Sales Funnel Widget -->
+
+            <div class="scarcity">
+                <p class="scarcity-label">Cupos Disponibles</p>
+                <p class="scarcity-number">3</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="../terminos/index.html">Términos de Uso</a>
+                <a href="../privacidad/index.html">Privacidad</a>
+            </div>
+
+            <p class="footer-disclaimer">
+                Este sitio no forma parte de YouTube ni de Google LLC. No está patrocinado ni respaldado por ellos.
+            </p>
+
+            <p class="footer-copyright">© 2025 - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+
+</html>

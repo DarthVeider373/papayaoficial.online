@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Felicidades! - Oferta Especial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rosa: #e8a0a0;
+            --rosa-escuro: #d48b8b;
+            --pessego: #f5c5a0;
+            --pessego-claro: #fde8d5;
+            --laranja: #e8945a;
+            --verde: #6bb879;
+            --verde-escuro: #5aa368;
+            --amarelo: #d4b83d;
+            --vermelho: #d46b6b;
+            --fundo: #ffffff;
+            --texto: #3a3a3a;
+            --texto-leve: #6a6a6a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--fundo);
+            color: var(--texto);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 40px 24px 50px;
+        }
+
+        /* Reading time */
+        .reading-time {
+            color: var(--texto-leve);
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+        }
+
+        /* Headlines */
+        .pre-title {
+            color: var(--verde);
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 4.5vw, 2rem);
+            font-weight: 800;
+            color: var(--texto);
+            text-align: center;
+            margin-bottom: 32px;
+            line-height: 1.35;
+        }
+
+        /* Content paragraphs */
+        .content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .content strong {
+            color: var(--texto);
+            font-weight: 700;
+        }
+
+        .content .highlight-green {
+            color: var(--verde);
+            font-weight: 700;
+        }
+
+        .content .highlight-red {
+            color: var(--vermelho);
+            font-weight: 700;
+        }
+
+        .content .underline {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .content em {
+            font-style: italic;
+            color: var(--texto-leve);
+        }
+
+        /* Image sections */
+        .image-section {
+            margin: 36px 0;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(212, 139, 139, 0.15);
+        }
+
+        /* Product mockup */
+        .product-mockup {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .product-mockup img {
+            max-width: 550px;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Bullet list styled */
+        .benefit-intro {
+            margin: 28px 0 20px;
+            font-size: 1.1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 44px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 48px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            font-family: 'Nunito', sans-serif;
+            color: var(--texto);
+            background: linear-gradient(135deg, var(--amarelo) 0%, #e8cc4a 100%);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 20px rgba(212, 184, 61, 0.35);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(212, 184, 61, 0.45);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* Decline link */
+        .decline-link {
+            display: block;
+            text-align: center;
+            color: var(--texto-leve);
+            font-size: 0.95rem;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            cursor: pointer;
+            margin-top: 18px;
+            transition: color 0.2s;
+        }
+
+        .decline-link:hover {
+            color: var(--texto);
+        }
+
+        /* Divider */
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--pessego), transparent);
+            margin: 40px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(90, 64, 64, 0.95);
+            color: rgba(255, 255, 255, 0.85);
+            padding: 28px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.73rem;
+            opacity: 0.55;
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-copyright {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 18px 40px;
+            }
+
+            .content p {
+                font-size: 1.05rem;
+            }
+
+            .cta-button {
+                padding: 18px 36px;
+                font-size: 1.05rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Reading time -->
+        <p class="reading-time">Tiempo de lectura: 2 min</p>
+
+        <!-- Headlines -->
+        <p class="pre-title">¡Felicidades!</p>
+        <h1>Si llegaste hasta aquí, estás lista para conocer estos secretos...</h1>
+
+        <!-- Content -->
+        <div class="content">
+            <p>Me alegra mucho que estés aquí. Y antes de nada, debes saber que <span class="underline">se cuentan con los dedos</span> las mujeres que llegan a esta etapa y tienen acceso a los secretos que voy a contarte ahora.</p>
+
+            <p>Si llegaste hasta aquí, significa que estás realmente <span class="underline">comprometida</span> con una <strong>transformación completa</strong> de tu cuerpo y de tu vida.</p>
+
+            <p>En este momento tú:</p>
+
+            <p>- Ya <strong>desbloqueaste tu intestino,</strong> estás más liviana, deshinchada y sin más síntomas de estreñimiento...</p>
+
+            <p>Tienes un <strong>intestino completamente blindado,</strong> funcionando perfecta y regularmente...</p>
+
+            <p>Esto significa que todo ya está perfecto dentro de ti. Ahora, imagina poder <span class="underline">exteriorizar</span> eso de una vez y verlo también desde afuera?</p>
+
+            <p><span class="underline">Piel</span> <strong>más bonita...</strong> <span class="underline">cabello</span> <strong>más fuerte...</strong> <span class="underline">uñas</span> <strong>saludables</strong> y un <span class="underline">cuerpo</span> <strong>visiblemente rejuvenecido.</strong></p>
+
+            <p>A esta altura ya entendiste que <span class="underline">el intestino es la fuente de nuestra salud</span> y que si él está bien, todo lo demás también estará bien.</p>
+
+            <p>Y la verdad es que después que el intestino se regula, el cuerpo queda <span class="underline">listo</span> para <strong>absorber mejor los nutrientes y regenerar tejidos...</strong> pero si no sabes qué consumir y cuándo, pierdes esa <span class="underline">ventana de oportunidad.</span></p>
+
+            <p>Fue por eso que a través de las personas que conocí después de divulgar PapayaApp, como <span class="highlight-green">Ana María, el Dr. Pérez y varios otros famosos,</span> pude llegar a las actrices más icónicas y bellas de la televisión y <strong>descubrir su secreto</strong> para lucir <strong>tan jóvenes,</strong> <span class="underline">incluso después de los 40, 50 y hasta 60 años.</span></p>
+
+            <p>Actrices como <strong>Salma Hayek, que tiene 58 años, Sofía Vergara, que tiene 52 años</strong> y <strong>Jennifer Lopez, que ya tiene increíbles 55 años</strong> y muestra una belleza tan exuberante.</p>
+
+            <!-- Image section - Celebrities -->
+            <div class="image-section">
+                <img src="/image/2.png" alt="Actrices famosas">
+            </div>
+
+            <p>Después de conversar con una a una, lo que llevó meses, pude reunir cada uno de sus secretos y desarrollar lo que llamé de <span class="highlight-green">"Protocolo de Belleza Rejuvenecedora"</span></p>
+
+            <!-- Image section - Product mockup 1 -->
+            <div class="image-section">
+                <img src="/image/1.png" alt="Protocolo de Belleza">
+            </div>
+
+            <p>En él, vas a tener un cronograma <strong>listo y personalizado para ti,</strong> con recetas, jugos, tés y combinaciones que <span class="underline">aceleran la regeneración celular, mejoran la piel y fortalecen el cabello.</span></p>
+
+            <p>Lo único que vas a necesitar hacer es seguir el <strong>paso a paso</strong> que ya está montado para ti.</p>
+
+            <p>Y en apenas <strong>21 días,</strong> vas a notar <span class="underline">tu piel más iluminada, tu cabello más fuerte y un cuerpo visiblemente más firme y más joven.</span></p>
+
+            <p>Las poquísimas mujeres que tuvieron el <strong>privilegio</strong> de conocer estos secretos, me contaron que vieron a sus maridos comenzar a <strong>desearlas y elogiarlas</strong> como no lo hacían hace años. Además de que algunas hasta relataron atraer miradas de admiración cuando pasaban por la calle...</p>
+
+            <p>Como te dije, para que tengas acceso a esto, todo debería estar en orden dentro de ti.</p>
+
+            <p><em>Al final, no serviría de nada que te ofreciera esto antes, ya que tu intestino no había sido reparado. Sería como si te ofreciera la pintura para pintar la pared, antes de que hubieras construido la pared.</em></p>
+
+            <p>Y como estas informaciones son <strong>confidenciales,</strong> no puedo seguir ofreciendo esto muchas veces porque no puedo dejar que se filtre.</p>
+
+            <p>Por lo tanto, esta es tu <strong>única oportunidad</strong> de desbloquear el acceso a estos secretos.</p>
+
+            <p>El hecho de que hayas llegado hasta aquí, solo prueba tu <strong>compromiso</strong> en transformar completamente tu vida, por lo tanto sé que ya sabes lo especial y exclusivo que es todo esto que te conté.</p>
+
+            <p>Entonces <strong>toca ahora</strong> en el botón abajo para <span class="underline">desbloquear los secretos detrás de la jovialidad y belleza de las actrices más famosas de la televisión</span> y tener acceso al <span class="highlight-green">Protocolo de Belleza Rejuvenecedora</span></p>
+        </div>
+
+        <!-- HOTMART - Sales Funnel Widget -->
+        <!--- sales funnel container --->
+        <div id="hotmart-sales-funnel"></div>
+
+        <!--- script load and setup --->
+        <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+        <script>
+            checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+        </script>
+        <!-- HOTMART - Sales Funnel Widget -->
+
+        <!-- Product mockup final -->
+        <div class="product-mockup">
+            <img src="/image/3.png" alt="Protocolo de Belleza Rejuvenecedora - Mockup">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <nav class="footer-links">
+                <a href="../terminos/index.html">Términos de Uso</a>
+                <a href="../privacidad/index.html">Privacidad</a>
+            </nav>
+
+            <p class="footer-disclaimer">
+                Este sitio no forma parte del sitio de YouTube ni de Google LLC. Tampoco está respaldado ni patrocinado por YouTube de ninguna manera. YouTube es una marca registrada de Google LLC.
+                <br><br>
+                La reproducción, distribución o modificación de todo o parte de este sitio y su contenido está estrictamente prohibida. Todo el contenido está protegido por las leyes de derechos de autor y propiedad intelectual aplicables en todos los países.
+                <br><br>
+                El autor se reserva el derecho de tomar medidas legales en caso de incumplimiento. Se han realizado todos los esfuerzos para presentar este programa con precisión. No hay garantía de que lograrás los mismos resultados o alcanzarás la abundancia mencionada.
+            </p>
+
+            <p class="footer-copyright">
+                Todos los derechos reservados © 2025
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
