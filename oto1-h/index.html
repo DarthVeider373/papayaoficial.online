@@ -79,78 +79,6 @@
             margin-bottom: 16px;
         }
 
-        .video-wrapper {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(212, 139, 139, 0.25);
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            background: #2a2a2a;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .video-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-
-        .play-button {
-            width: 70px;
-            height: 70px;
-            background: var(--verde);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: transform 0.3s;
-            box-shadow: 0 0 0 0 rgba(107, 184, 121, 0.4);
-            animation: pulse-play 2s infinite;
-        }
-
-        @keyframes pulse-play {
-            0% {
-                box-shadow: 0 0 0 0 rgba(107, 184, 121, 0.5);
-            }
-
-            70% {
-                box-shadow: 0 0 0 18px rgba(107, 184, 121, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(107, 184, 121, 0);
-            }
-        }
-
-        .play-button svg {
-            width: 28px;
-            height: 28px;
-            fill: white;
-            margin-left: 4px;
-        }
-
         .sound-notice {
             text-align: center;
             padding: 14px;
@@ -159,7 +87,6 @@
             font-weight: 600;
             opacity: 0.95;
         }
-
 
         /* Offer section */
         .offer-section {
@@ -214,34 +141,6 @@
             margin-bottom: 24px;
         }
 
-        /* CTA Button */
-        .cta-button {
-            display: block;
-            width: 100%;
-            padding: 18px 32px;
-            font-size: 1.15rem;
-            font-weight: 700;
-            font-family: 'Nunito', sans-serif;
-            color: white;
-            background: linear-gradient(135deg, var(--verde) 0%, var(--verde-escuro) 100%);
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 6px 20px rgba(107, 184, 121, 0.4);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(107, 184, 121, 0.5);
-        }
-
-        .cta-button:active {
-            transform: translateY(0);
-        }
-
         /* Footer */
         footer {
             background: rgba(90, 64, 64, 0.9);
@@ -292,6 +191,11 @@
             opacity: 0.7;
         }
 
+        /* ✅ Delay VTurb: escondido até o segundo 442 (07:22) */
+        .esconder {
+            display: none;
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 20px 16px 30px;
@@ -307,7 +211,6 @@
         }
     </style>
 
-
     <script>!function (i, n) { i._plt = i._plt || (n && n.timeOrigin ? n.timeOrigin + n.now() : Date.now()) }(window, performance);</script>
     <link rel="preload" href="https://scripts.converteai.net/60b2de82-89bd-4e79-a03f-d206fb6f5a6b/players/69475c86b31bcf401dd8a467/v4/player.js" as="script">
     <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
@@ -316,8 +219,6 @@
     <link rel="dns-prefetch" href="https://scripts.converteai.net">
     <link rel="dns-prefetch" href="https://images.converteai.net">
     <link rel="dns-prefetch" href="https://api.vturb.com.br">
-
-
 </head>
 
 <body>
@@ -330,24 +231,37 @@
 
         <!-- Video -->
         <section class="video-section">
+            <vturb-smartplayer id="vid-69475c86b31bcf401dd8a467" style="display:block;margin:0 auto;width:100%;max-width:400px;"></vturb-smartplayer>
+            <script type="text/javascript">
+                var s = document.createElement("script");
+                s.src = "https://scripts.converteai.net/60b2de82-89bd-4e79-a03f-d206fb6f5a6b/players/69475c86b31bcf401dd8a467/v4/player.js";
+                s.async = !0;
+                document.head.appendChild(s);
+            </script>
 
+            <!-- ✅ Script de delay VTurb (07:22 = 442s) -->
+            <script>
+                var delaySeconds = 442;
 
+                function initVturbDelay() {
+                    var player = document.querySelector("vturb-smartplayer");
+                    if (!player) return setTimeout(initVturbDelay, 200);
 
-            <vturb-smartplayer id="vid-69475c86b31bcf401dd8a467" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
-            <script type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/60b2de82-89bd-4e79-a03f-d206fb6f5a6b/players/69475c86b31bcf401dd8a467/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+                    player.addEventListener("player:ready", function () {
+                        player.displayHiddenElements(delaySeconds, [".esconder"], { persist: true });
+                    });
+                }
 
-
+                initVturbDelay();
+            </script>
         </section>
-
     </div>
-
-    </section>
 
     <!-- Sound notice -->
     <p class="sound-notice">🔈 Comprueba si el sonido está activado.</p>
 
-    <!-- Offer -->
-    <section class="offer-section">
+    <!-- Offer (ESCONDIDA ATÉ 07:22) -->
+    <section class="offer-section esconder">
         <span class="discount-badge">50% OFF</span>
         <h2 class="offer-title">¡DESCUENTO SORPRESA!</h2>
 
@@ -359,17 +273,14 @@
         <p class="offer-instruction">Toque el botón a continuación para finalizar:</p>
 
         <!-- HOTMART - Sales Funnel Widget -->
-        <!--- sales funnel container --->
         <div id="hotmart-sales-funnel"></div>
 
-        <!--- script load and setup --->
         <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
         <script>
             checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
         </script>
         <!-- HOTMART - Sales Funnel Widget -->
     </section>
-    </div>
 
     <!-- Footer -->
     <footer>
